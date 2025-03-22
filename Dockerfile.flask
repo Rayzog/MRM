@@ -1,0 +1,25 @@
+FROM python:3.10-alpine
+
+WORKDIR /app
+
+# Установка зависимостей
+RUN apk add --no-cache gcc musl-dev libffi-dev postgresql-dev postgresql-client curl
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Копирование кода
+COPY . .
+
+# Копируем SQL-файл и скрипт для инициализации
+COPY local_user.sql /docker-entrypoint-initdb.d/
+COPY entrypoint.sh /app/
+# Делаем скрипт create_user.sh исполняемым
+RUN tr -d '\r' < /app/entrypoint.sh > /app/entrypoint_unix.sh && \
+    mv /app/entrypoint_unix.sh /app/entrypoint.sh && \
+    chmod +x /app/entrypoint.sh
+
+# Выполнение команды для создания таблицы перед запуском приложения
+ENTRYPOINT ["/app/entrypoint.sh"]
+
+# Запуск приложения
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "run:app"]

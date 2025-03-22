@@ -1,0 +1,58 @@
+{
+  "clientId": "superset",
+  "name": "superset",
+  "description": "",
+  "rootUrl": "",
+  "adminUrl": "",
+  "baseUrl": "",
+  "surrogateAuthRequired": false,
+  "enabled": true,
+  "alwaysDisplayInConsole": true,
+  "clientAuthenticatorType": "client-secret",
+  "secret": "OSuyWPZ6rRxuXyOC3g0Tlc9KcRjCHAd2",
+  "redirectUris": [
+    "http://localhost:8088/*"
+  ],
+  "webOrigins": [
+    "http://localhost:8088"
+  ],
+  "notBefore": 0,
+  "bearerOnly": false,
+  "consentRequired": false,
+  "standardFlowEnabled": true,
+  "implicitFlowEnabled": false,
+  "directAccessGrantsEnabled": true,
+  "serviceAccountsEnabled": false,
+  "publicClient": false,
+  "frontchannelLogout": true,
+  "protocol": "openid-connect",
+  "attributes": {
+    "oidc.ciba.grant.enabled": "false",
+    "client.secret.creation.time": "1742588865",
+    "backchannel.logout.session.required": "true",
+    "display.on.consent.screen": "false",
+    "oauth2.device.authorization.grant.enabled": "false",
+    "backchannel.logout.revoke.offline.tokens": "false"
+  },
+  "authenticationFlowBindingOverrides": {},
+  "fullScopeAllowed": true,
+  "nodeReRegistrationTimeout": -1,
+  "defaultClientScopes": [
+    "web-origins",
+    "acr",
+    "profile",
+    "roles",
+    "email"
+  ],
+  "optionalClientScopes": [
+    "address",
+    "phone",
+    "offline_access",
+    "microprofile-jwt"
+  ],
+  "access": {
+    "view": true,
+    "configure": true,
+    "manage": true
+  }
+}

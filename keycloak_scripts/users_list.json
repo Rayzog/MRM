@@ -1,0 +1,23 @@
+[
+	{
+		"id": "fdf7043e-6813-4494-8f0a-b747882a7d56",
+		"username": "123",
+		"firstName": "Ivan",
+		"lastName": "Fedorov",
+		"email": "qwer@gmail.com",
+		"emailVerified": true,
+		"createdTimestamp": 1741198419035,
+		"enabled": true,
+		"totp": false,
+		"disableableCredentialTypes": [],
+		"requiredActions": [],
+		"notBefore": 0,
+		"access": {
+			"manageGroupMembership": true,
+			"view": true,
+			"mapRoles": true,
+			"impersonate": true,
+			"manage": true
+		}
+	}
+]

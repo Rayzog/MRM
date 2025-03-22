@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Профиль пользователя</h1>
+    <div class="profile-info">
+        <p>Логин: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Последняя активность: {{ user.last_active.strftime('%d.%m.%Y %H:%M') }}</p>
+    </div>
+{% endblock %}

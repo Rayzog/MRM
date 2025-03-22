@@ -1,0 +1,131 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    ports:
+      - "5433:5432"
+    networks:
+      - keycloak-network
+    environment:
+      POSTGRES_MULTIPLE_DATABASES: "MRM,superset"
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      TZ: Europe/Moscow
+      LC_TIME: C
+      LC_ALL: C.UTF-8
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./postgres-init:/docker-entrypoint-initdb.d/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - keycloak-network
+    environment:
+      TZ: Europe/Moscow
+      LC_TIME: C
+    volumes:
+      - redisdata:/data
+    command: redis-server --requirepass 123 --save 60 1 --loglevel verbose
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "123", "ping"]
+
+  keycloak:
+    build:
+      context: .
+      dockerfile: Dockerfile.keycloak
+    container_name: keycloak
+    networks:
+      - keycloak-network
+    ports:
+      - "8080:8080"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/MRM
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: password
+      KC_DB_SCHEMA: public
+      TZ: Europe/Moscow
+      LC_TIME: C
+    depends_on:
+      - postgres
+    volumes:
+      - keycloak_data:/opt/keycloak/data  # Для сохранения данных H2
+
+  superset:
+    build: 
+      context: .
+      dockerfile: Dockerfile.superset
+    container_name: superset
+    ports:
+      - "8088:8088"
+    networks:
+      - keycloak-network
+    environment:
+      SUPERSET_ENV: production
+      SUPERSET_SECRET_KEY: yoursecretkey # Замените на случайный ключ
+      SUPERSET_DATABASE_URI: "postgresql+psycopg2://postgres:password@postgres:5432/superset"
+      SUPERSET_DB_ENGINE: "postgresql"  # Явное указание СУБД
+      SQLALCHEMY_DATABASE_URI: "postgresql+psycopg2://postgres:password@postgres:5432/superset"
+      TZ: Europe/Moscow
+      LC_TIME: C
+    volumes:
+      - ./superset_config.py:/app/superset/superset_config.py
+    depends_on:
+      - postgres
+      - keycloak
+    command: >
+      sh -c "
+        while ! pg_isready -h postgres -U postgres -d superset; do 
+          sleep 1
+        done
+        pip install psycopg2-binary &&
+        superset db upgrade &&
+        superset init &&
+        /usr/bin/run-server.sh
+      "
+
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile.flask
+    container_name: flask-app
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_ENV: development
+      FLASK_DEBUG: 1
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/MRM
+      REDIS_URL: redis://:123@redis:6379/0
+      KEYCLOAK_URL: http://keycloak:8080
+      KEYCLOAK_REALM: myMRM
+      KEYCLOAK_CLIENT_ID: flask-app
+      TZ: Europe/Moscow
+      LC_TIME: C
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      keycloak:
+        condition: service_started
+    networks:
+      - keycloak-network
+
+networks:
+  keycloak-network:
+    driver: bridge
+
+volumes:
+    postgres-data:
+    redisdata:
+    keycloak_data:

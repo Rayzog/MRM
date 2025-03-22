@@ -1,0 +1,39 @@
+cd /D E:\projects\myMRM
+docker-compose down -v
+docker-compose build --no-cache keycloak
+
+#Запускаем все контейнеры
+docker-compose up --build
+
+#Проваливаемся в командную строку конкретного контейнера
+docker exec -it keycloak /bin/sh
+
+#Стопаем (-s) и удаляем (rm) один контейнер без подтверждения (-f)
+docker-compose rm -sf <service_name>
+
+#Запускаем нужный контейнер
+docker-compose up -d --build <service_name>
+
+Имя_сервиса	:	имя_контейнера
+flask		:	flask-app
+keycloak	:	keycloak
+redis		:	redis
+postgres	:	postgres
+gitlab		:	gitlab
+
+
+docker-compose rm -sf flask
+docker-compose up -d --build flask
+
+#проверка времени в контейнере
+docker exec -it flask-app /bin/sh
+docker exec -it keycloak /bin/sh
+docker exec -it redis /bin/sh
+docker exec -it postgres /bin/sh
+
+docker-compose rm -sf gitlab
+docker-compose up -d --build gitlab
+
+
+docker-compose rm -sf postgres
+docker-compose up -d --build postgres

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="login-container">
+    <h1>Вход в систему</h1>
+
+    <form method="POST" action="{{ url_for('auth.handle_login') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <div class="form-group">
+            <label for="username">Логин:</label>
+            <input type="text"
+                   id="username"
+                   name="username"
+                   class="form-control"
+                   required
+                   placeholder="Введите корпоративный логин">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password"
+                   id="password"
+                   name="password"
+                   class="form-control"
+                   required
+                   placeholder="Введите пароль">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Войти</button>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} mt-3">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </form>
+
+    <div class="support-info mt-4">
+        <p>Проблемы со входом? Обратитесь в службу поддержки:</p>
+        <p>Телефон: +7 (XXX) XXX-XX-XX<br>Email: support@company.com</p>
+    </div>
+</div>
+{% endblock %}

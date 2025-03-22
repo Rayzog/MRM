@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <div class="welcome-section">
+            <h1>Добро пожаловать в систему</h1>
+            <div class="auth-buttons">
+                <a href="{{ url_for('auth.login') }}" class="btn btn-primary">
+                    Войти в систему
+                </a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
