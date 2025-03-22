@@ -1,4 +1,4 @@
-cd /D E:\projects\myMRM
+cd /D E:\projects\MRM\MRM
 docker-compose down -v
 docker-compose build --no-cache keycloak
 
@@ -20,7 +20,7 @@ keycloak	:	keycloak
 redis		:	redis
 postgres	:	postgres
 gitlab		:	gitlab
-
+superset	:	superset
 
 docker-compose rm -sf flask
 docker-compose up -d --build flask
@@ -30,6 +30,7 @@ docker exec -it flask-app /bin/sh
 docker exec -it keycloak /bin/sh
 docker exec -it redis /bin/sh
 docker exec -it postgres /bin/sh
+docker exec -it superset /bin/sh
 
 docker-compose rm -sf gitlab
 docker-compose up -d --build gitlab
