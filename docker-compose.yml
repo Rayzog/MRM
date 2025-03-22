@@ -87,6 +87,7 @@ services:
           sleep 1
         done
         pip install psycopg2-binary &&
+        pip install flask-cors authlib &&
         superset fab create-admin --username admin --firstname Admin --lastname User --email admin@example.com --password admin &&
         superset db upgrade &&
         superset init &&
