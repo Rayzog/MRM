@@ -72,7 +72,7 @@ services:
       - keycloak-network
     environment:
       SUPERSET_CONFIG_PATH: /app/pythonpath/superset_config.py
-      SUPERSET_SECRET_KEY: yoursecretkey # Замените на случайный ключ
+      SUPERSET_SECRET_KEY: bVPpwHQwagtwKevHcqJVZ2qfPonDjANl # Замените на случайный ключ
       TZ: Europe/Moscow
       LC_TIME: C
     volumes:

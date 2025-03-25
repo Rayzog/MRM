@@ -32,10 +32,11 @@ def create_app(config_class='app.config.Config'):
     configure_login_manager()  # Вызываем после инициализации db
 
     # Регистрация blueprint
-    from .routes import main_bp
+    from .routes import main_bp, superset_bp
     from .auth import auth_bp
     app.register_blueprint(main_bp)
     app.register_blueprint(auth_bp)
+    app.register_blueprint(superset_bp)
 
     @app.after_request
     def delete_invalid_cookies(response):
