@@ -42,6 +42,7 @@ def view_superset():
         decoded_token = keycloak_service.validate_token(current_user.access_token)
         response = make_response(render_template('superset.html'))
         response.headers['Content-Security-Policy'] = "frame-ancestors 'self' http://localhost:5000;"
+        current_app.logger.debug(f"view_superset: ответ:{response.json}")
         return response
 
     except KeycloakAuthError:
@@ -52,5 +53,4 @@ def view_superset():
             access_token=new_tokens['access_token'],
             refresh_token=new_tokens.get('refresh_token')
         )
-
-    return response
+        return redirect(url_for('superset.view_superset'))

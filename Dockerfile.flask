@@ -12,22 +12,21 @@ COPY . .
 
 # Копируем SQL-файл и скрипт для инициализации
 COPY local_user.sql /docker-entrypoint-initdb.d/
-COPY entrypoint.sh /app/
+COPY db_operation.sh /app/
+RUN echo "copy db_operation.sh compleate"
 COPY get_public_key.sh /app/
+RUN echo "copy get_public_key.sh compleate"
+COPY entrypoint.sh /app/
+RUN echo "copy entrypoint.sh compleate"
 
-# Делаем скрипт create_user.sh исполняемым
-RUN tr -d '\r' < /app/entrypoint.sh > /app/entrypoint_unix.sh && \
-    mv /app/entrypoint_unix.sh /app/entrypoint.sh && \
-    chmod +x /app/entrypoint.sh
-	
-# Делаем скрипт create_user.sh исполняемым
-RUN tr -d '\r' < /app/get_public_key.sh > /app/get_public_key_unix.sh && \
-    mv /app/get_public_key_unix.sh /app/get_public_key.sh && \
-    chmod +x /app/get_public_key.sh
+RUN for script in entrypoint.sh get_public_key.sh; do \
+      tr -d '\r' < "/app/${script}" > "/app/${script}_unix" && \
+      mv "/app/${script}_unix" "/app/${script}" && \
+      chmod +x "/app/${script}"; \
+    done
 
 # Выполнение команды для создания таблицы перед запуском приложения
 ENTRYPOINT ["/app/entrypoint.sh"]
-ENTRYPOINT ["/app/get_public_key.sh"]
 
 # Запуск приложения
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "2", "run:app"]

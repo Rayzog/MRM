@@ -13,7 +13,7 @@ class Config:
     #REDIS
     REDIS_URL = os.environ.get('REDIS_URL', 'redis://:123@redis:6379/0')
     SESSION_TYPE = 'redis'
-    SESSION_LIFETIME = timedelta(seconds=30)  # Время жизни сессии
+    SESSION_LIFETIME = timedelta(seconds=300)  # Время жизни сессии
     SESSION_COOKIE_NAME = 'persistent_session'
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SECURE = True  # Для HTTPS

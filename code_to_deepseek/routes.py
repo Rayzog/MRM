@@ -40,6 +40,9 @@ def view_superset():
         # Проверяем, истек ли токен
         #keycloak_service = current_app.config['KEYCLOAK_SERVICE']  # Предполагаем, что это ваш экземпляр сервис-класса
         decoded_token = keycloak_service.validate_token(current_user.access_token)
+        response = make_response(render_template('superset.html'))
+        response.headers['Content-Security-Policy'] = "frame-ancestors 'self' http://localhost:5000;"
+        return response
 
     except KeycloakAuthError:
         # Если токен недействителен, обновляем его
@@ -50,4 +53,4 @@ def view_superset():
             refresh_token=new_tokens.get('refresh_token')
         )
 
-    return render_template('superset.html')
+    return response

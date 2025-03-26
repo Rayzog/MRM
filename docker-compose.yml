@@ -60,6 +60,11 @@ services:
       - postgres
     volumes:
       - keycloak_data:/opt/keycloak/data  # Для сохранения данных H2
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/health/ready || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
 
   superset:
     build: 
@@ -112,12 +117,9 @@ services:
       TZ: Europe/Moscow
       LC_TIME: C
     depends_on:
-      postgres:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-      keycloak:
-        condition: service_started
+      - redis
+      - keycloak
+      - postgres
     networks:
       - keycloak-network
 
