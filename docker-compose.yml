@@ -78,6 +78,10 @@ services:
     environment:
       SUPERSET_CONFIG_PATH: /app/pythonpath/superset_config.py
       SUPERSET_SECRET_KEY: bVPpwHQwagtwKevHcqJVZ2qfPonDjANl # Замените на случайный ключ
+      SUPERSET_ENABLE_CORS: True
+      SUPERSET_ENABLE_PROXY_FIX: True
+      SUPERSET_RATELIMIT_STORAGE_URI: redis://:123@redis:6379/0
+      RATELIMIT_ENABLED: False
       TZ: Europe/Moscow
       LC_TIME: C
     volumes:
@@ -90,6 +94,11 @@ services:
       sh -c "
         while ! pg_isready -h postgres -U postgres -d superset; do 
           sleep 1
+        done
+        until nc -zv keycloak 8080
+        do
+            echo 'Keycloak is unavailable - sleeping'
+            sleep 5
         done
         pip install psycopg2-binary &&
         pip install flask-cors authlib &&

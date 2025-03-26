@@ -2,6 +2,8 @@ FROM apache/superset:latest
 
 USER root
 
+COPY ./app/services/keycloak_service.py /app/services/
+
 # Устанавливаем зависимости для Debian с явным указанием netcat-openbsd
 RUN apt-get update && \
     apt-get install -y \

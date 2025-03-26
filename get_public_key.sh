@@ -14,13 +14,20 @@ wait_for_keycloak() {
 wait_for_keycloak
 
 # Получаем JWKS
-JWKS_RESPONSE=$(curl -s http://keycloak:8080/realms/myMRM/protocol/openid-connect/certs)
+JWKS_RESPONSE=$(curl -s http://keycloak:8080/realms/myMRM)
 echo $JWKS_RESPONSE
 # Извлекаем параметры RSA ключа
-x5c=$(echo "$JWKS_RESPONSE" | jq -r '.keys[0].x5c')
-echo $x5c
-# Генерируем PEM-формат
-PEM_KEY=$(echo $x5c | tr -d '\n' | sed -n 's/.*MBAxDjAMBgNVBAMMBW15TVJN\(.*\)MA0GCSqGSIb3DQEBCwUAA4IBAQ.*/\1/p')
-echo $PEM_KEY
+public_key=$(echo "$JWKS_RESPONSE" | jq -r '.public_key')
+echo $public_key
 
-echo -n "KEYCLOAK_PUBLIC_KEY=$PEM_KEY" >> ".env"
+# Экранируем слеши для корректной работы с sed
+escaped_public_key=$(echo "$public_key" | sed 's/\//\\\//g')
+
+# Обновляем или добавляем параметр KEYCLOAK_PUBLIC_KEY
+if grep -q "^KEYCLOAK_PUBLIC_KEY=" .env; then
+    # Если параметр существует, заменяем его значение
+    sed -i "s/^KEYCLOAK_PUBLIC_KEY=.*/KEYCLOAK_PUBLIC_KEY=$escaped_public_key/" .env
+else
+    # Если параметра нет, добавляем его в конец файла
+    echo "KEYCLOAK_PUBLIC_KEY=$public_key" >> .env
+fi

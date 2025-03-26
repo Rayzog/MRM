@@ -5,6 +5,11 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <iframe src="http://localhost:8088/superset/welcome/?token={{ current_user.access_token }}" width="100%" height="600"></iframe>
+    <iframe
+    src="{{ url_for('main.superset_proxy', path='superset/welcome/') }}"
+    width="100%"
+    height="600"
+    referrerpolicy="no-referrer"
+></iframe>
 </body>
 </html>
