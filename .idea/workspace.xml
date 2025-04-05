@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="27ff4b4a-0086-4a9e-89c0-69b508f8ebca" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/MRM.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flask/.idea/myMRM.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/.idea/react.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/api/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/components/Navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/context/AuthContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/pages/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/pages/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/pages/NotFound.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/pages/Profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react/src/pages/Superset.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/myMRM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myMRM.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile.flask" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile.keycloak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile.superset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/decorators.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/extensions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/keycloak_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/superset.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_user.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_operation.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entrypoint.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flask-app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_public_key.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak_scripts/getUserList.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak_scripts/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keycloak_scripts/users_list.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local_user.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgres-init/01-init-databases.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/realm-myMRM.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/superset.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/superset_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/superset_test/Dockerfile.superset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/superset_test/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/superset_test/postgres-init/01-init-databases.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/superset_test/superset_config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Flask Main" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2sxK4mOkVrCDqFPuiyYDgllMRgB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/projects/MRM/MRM/flask&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PythonContentEntriesConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\projects\myMRM\app" />
+      <recent name="E:\projects\myMRM" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Flask server.Flask (run.py)">
+    <configuration name="tester" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="myMRM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tester.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Flask (run.py)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
+      <option name="flaskDebug" value="true" />
+      <module name="MRM" />
+      <option name="target" value="E:\projects\MRM\MRM\flask\run.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/flask" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Flask" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
+      <module name="myMRM" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="myMRM" type="Python.FlaskServer">
+      <module name="myMRM" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Flask server.myMRM" />
+      <item itemvalue="Flask server.Flask" />
+      <item itemvalue="Flask server.Flask (run.py)" />
+      <item itemvalue="Python.tester" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flask server.Flask (run.py)" />
+        <item itemvalue="Python.tester" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27ff4b4a-0086-4a9e-89c0-69b508f8ebca" name="Changes" comment="" />
+      <created>1739391596765</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739391596765</updated>
+      <workItem from="1739391604301" duration="4174000" />
+      <workItem from="1739628839784" duration="13153000" />
+      <workItem from="1739720149442" duration="4377000" />
+      <workItem from="1739728314366" duration="8477000" />
+      <workItem from="1739906695997" duration="4962000" />
+      <workItem from="1739988301328" duration="6975000" />
+      <workItem from="1740338072886" duration="3434000" />
+      <workItem from="1740596663081" duration="6028000" />
+      <workItem from="1740684449785" duration="5209000" />
+      <workItem from="1740945800033" duration="4311000" />
+      <workItem from="1741031608169" duration="1153000" />
+      <workItem from="1741114380672" duration="666000" />
+      <workItem from="1741196595474" duration="2136000" />
+      <workItem from="1741287342569" duration="596000" />
+      <workItem from="1741422899285" duration="2890000" />
+      <workItem from="1741450856819" duration="6243000" />
+      <workItem from="1741457689288" duration="6560000" />
+      <workItem from="1741468199571" duration="277000" />
+      <workItem from="1741538818524" duration="10690000" />
+      <workItem from="1741630758525" duration="5032000" />
+      <workItem from="1741851404152" duration="136000" />
+      <workItem from="1741856556401" duration="7070000" />
+      <workItem from="1741872993684" duration="9273000" />
+      <workItem from="1741985829903" duration="1415000" />
+      <workItem from="1742027862485" duration="1907000" />
+      <workItem from="1742069379327" duration="595000" />
+      <workItem from="1742071476743" duration="2015000" />
+      <workItem from="1742126945346" duration="1249000" />
+      <workItem from="1742589260065" duration="2571000" />
+      <workItem from="1742650312675" duration="1189000" />
+      <workItem from="1742660316224" duration="2520000" />
+      <workItem from="1742730472083" duration="7115000" />
+      <workItem from="1742990833269" duration="8379000" />
+      <workItem from="1743278019752" duration="3526000" />
+      <workItem from="1743329578766" duration="2765000" />
+      <workItem from="1743357108321" duration="2153000" />
+      <workItem from="1743408462935" duration="665000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/myMRM$Flask__run_py_.coverage" NAME="Flask (run.py) Coverage Results" MODIFIED="1742591759985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/myMRM$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1739651516379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/MRM$Flask__run_py_.coverage" NAME="Flask (run.py) Coverage Results" MODIFIED="1743331757268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flask" />
+    <SUITE FILE_PATH="coverage/myMRM$tester.coverage" NAME="tester Coverage Results" MODIFIED="1741540725438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

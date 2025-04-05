@@ -1,0 +1,21 @@
+FROM node:16-alpine
+
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
+
+# Копируем ТОЛЬКО файлы зависимостей сначала
+COPY ./react/package*.json ./
+
+# Чистая установка зависимостей
+RUN npm ci --no-cache
+
+# Копируем ВСЕ файлы проекта (включая скрипт build)
+COPY ./react .
+
+# Установка глобальных зависимостей
+RUN npm install -g react-scripts@5.0.1
+
+# Запускаем сборку только если скрипт существует
+RUN if [ -f package.json ] && grep -q '"build"' package.json; then npm run build; else echo "Build script not found"; fi
+
+CMD ["npm", "start"]
